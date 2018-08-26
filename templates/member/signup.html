@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>가입하기 Instagram</title>
+ <meta name="viewport" content="width=device-width, user-scalable=no">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/sign.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+
+<body>
+<div class="body">
+	<div class="left"></div>
+	<div class="content">
+	<div class="sign">
+			<div class="logo">
+				Instagram
+			</div>
+			{% include 'include/form.html' with form=signup_form submit_title='가입' %}
+			<div class="check">
+				가입하면 Instagram의 <a class="check" href="#">약관</a>	, <a class="check" href="#">데이터 정책</a> 
+				및 <a class="check" href="#">쿠키 정책</a>에 동의하게 됩니다.
+			</div>
+	</div>
+	<div class="login">
+		계정이 있으신가요? <a class="login" href="{% url 'member:login' %}">로그인</a>
+	</div>
+	</div>
+	<div class="right"></div>
+</div>
+
+</body>
+</html>
+

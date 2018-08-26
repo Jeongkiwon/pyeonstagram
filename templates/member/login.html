@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>로그인 Instagram</title>
+ <meta name="viewport" content="width=device-width, user-scalable=no">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/login2.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+
+<body>
+<div class="body">
+	<div class="left"></div>
+	<div class="content">
+		
+		<div class="login">
+			<div class="logo">
+				Instagram
+			</div>
+			{% include 'include/form.html' with form=login_form submit_title='로그인' %}
+		</div>
+		<div class="signup">
+				계정이 없으신가요? <a class="signup" href="{% url 'member:signup' %}">가입하기</a>
+		</div>
+	</div>
+	<div class="right"></div>
+</div>
+
+</body>
+</html>
+

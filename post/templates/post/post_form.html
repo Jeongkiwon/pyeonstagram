@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}post_form.html{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/post_form.css" %}{% endblock %}
+
+{% block content %}
+<div class="left">
+
+</div>
+<div id="content">
+
+    <h1>Post Create/Update - {{user.user_id}}</h1>
+
+    <form action="." enctype="multipart/form-data" method="post">{% csrf_token %}
+
+    {% if form.errors %}
+    <p class="errornote">Wrong! Please correct the error(s) below.</p>
+        {% for error in field.errors %}
+				<span class="help-block">{{ error }}</span>
+        {% endfor %}
+    {% endif %}
+
+    <p>This is a creation or update form for your post.</p>
+
+    <fieldset class="aligned">
+
+        <div class="form-row">
+            {{ form.photo.label_tag }} {{ form.photo }}
+        </div>
+        <div class="form-row">
+            {{ form.content.label_tag }} {{ form.content }}
+        </div>
+
+    </fieldset>
+
+    <div class="submit-row">
+        <input type="submit" value="Submit"/>
+    </div>
+
+    <script type="text/javascript">document.getElementById('id_title').focus();</script>
+    </form>
+
+</div>
+<div class="right">
+
+</div>
+{% endblock %}

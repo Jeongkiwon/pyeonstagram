@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>{% block title %}Change My Life{% endblock %}</title>
+ <meta name="viewport" content="width=device-width, user-scalable=no">
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base1.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+</head>
+
+<body>
+    {% load static %}
+<div class="top_nav">
+        <div class="logo">
+        <a class="insta" href="{%url 'post:index'%}">
+                <img class="insta" src="{% static 'image/insta.png' %}" alt="">
+            </a>
+        <div>
+        <a class="logo" href="{%url 'post:index'%}">Instagram</a>
+        </div>
+	</div>
+    {% if user.is_active %}
+    <div class="user_right">
+    <div class="insta_add"><a href="{% url 'post:add' %}">
+            <img class="insta_add" src="{% static 'image/insta_add2.png' %}" alt=""></a>
+    </div>        
+    <div class="user_right_icon"><a href="{% url 'user_list' %}"><img src="{% static 'image/insta_other.png' %}" alt="" class="insta_other"></a></div>
+    <div class="user_right_icon"><a href="{% url 'post:my_post'%}"><img src="{% static 'image/insta_profile.png' %}" alt="" class="insta_profile"></a></div>
+    
+    
+</div>
+    {% endif %}
+</div>
+
+<div class="body">
+    {% block content %}
+    {% endblock %}
+</div>
+
+{% block footer %}{% endblock %}
+
+</body>
+</html>

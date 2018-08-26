@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/user_list.css" %}{% endblock %}
+
+{% block content %}
+<div class="left"></div>
+<div class="content">
+    <div class="gray user_list_follow">
+        팔로우할 만한 계정 둘러보기 
+    </div>
+    {% for user in users %}
+        <div class="user">
+            <div class="user_id">
+            <a class="gray" href="{% url 'post:user_detail' user_pk=user.id %}">
+                {{ user.user_id }}
+            </a>
+            </div>
+            <div class="user_description">
+                {{user.description}}
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<div class="right">
+
+</div>    
+{% endblock content %}
+
+{% block footer %}
+<div class="footer"></div>
+{% endblock footer %}
