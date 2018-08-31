@@ -3,7 +3,8 @@
 인스타그램 클론의 디자인만 바꿔서 만든 우리집 강아지 편하이를 위한 웹 앨범입니다.
 
 배포는 파이썬애니웨어에서 했으며 아래의 주소로 가시면 사이트를 볼 수 있습니다.
-pyeonstagram.pythonanywhere.com
+<br>
+<a href="pyeonstagram.pythonanywhere.com">pyeonstagram.pythonanywhere.com</a>
 <h4>개인적으로 사용하는 사이트입니다. 글을 업로드하지 말아주세요!</h4>
 
 아직 post 하나에 사진 하나 밖에 넣지 못합니다. 
