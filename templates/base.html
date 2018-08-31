@@ -4,10 +4,12 @@
 <head>
 <title>{% block title %}Change My Life{% endblock %}</title>
  <meta name="viewport" content="width=device-width, user-scalable=no">
+    {% block head %}{% endblock %}
 {% load staticfiles %}
 <link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base1.css" %}{% endblock %}" />
 <link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
 <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 
 <body>

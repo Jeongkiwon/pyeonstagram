@@ -1,42 +1,5 @@
-{% extends "base.html" %}
-
-{% block title %}Change My Life-TodoList{% endblock %}
 {% load staticfiles %}
-{% block extrastyle %}{% static "css/my_post.css" %}{% endblock %}
-
-{% block content %}
-<div class="left">
-
-</div>
-<div class="content">	
-		<h1>{{user.user_id}}</h1>
-		<div class="up">
-			<span class="user_description">{{user.description}}</span>
-			
-			<span class="logout"><a href="{% url 'member:logout' %}">Log-out</a></span>
-		</div>
-		
-	
-		
-		{% for post in posts %}
-		<div class="post">
-				<div class="article">
-					<div class="post_owner">
-						<div class="owner_user_id">
-							<a class="user_id" href="{% url 'post:user_detail' user_pk=post.owner.id %}">
-								{{ post.owner.user_id }}
-							</a>
-						</div>
-						<div class="owner_user_description">
-							{{post.owner.description}}
-						</div>
-					</div>
-					<div class="todo_photo">
-						<img src="{{ post.photo.url }}" alt="" class="post_image">
-					</div>
-				</div>
-				
-				<div class="post_middle">
+<div class="post_middle">
 
 
 				<div class="panel-body">
@@ -112,12 +75,3 @@
 						<input type="hidden" name="path" value="{{request.path}}"/>
 					</form>
 			</div>
-        
-        {% endfor %}
-</div>
-
-
-<div class="right">
-
-</div>
-{% endblock %}

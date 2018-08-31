@@ -1,6 +1,7 @@
 
 from django.contrib.auth import login as django_login, logout as django_logout, authenticate
 from django.http import HttpResponse, HttpResponseRedirect
+from member.models import User
 from .forms import LoginForm
 from django.contrib.auth import (
     authenticate,
@@ -8,7 +9,7 @@ from django.contrib.auth import (
     logout as django_logout,
 )
 from .forms import LoginForm, SignupForm
-from django.contrib.auth.models import User
+
 from post.models import Post, Comment
 from django.shortcuts import render, get_object_or_404, redirect
 
@@ -61,4 +62,11 @@ def signup(request):
         'signup_form': signup_form,
     }
     return render(request, 'member/signup.html', context)
+
+def user_list(request):
+    users = User.objects.all()
+    context = {
+        'users': users,
+    }
+    return render(request, 'user_list.html', context)
 

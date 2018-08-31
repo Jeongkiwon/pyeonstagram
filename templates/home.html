@@ -1,17 +1,57 @@
 {% extends "base.html" %}
 
 {% block title %}{% endblock %}
-
+{% block head %}
+<link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+{% endblock %}
 {% load staticfiles %}
 {% block extrastyle %}{% static "css/home.css" %}{% endblock %}
 
 {% block content %}
-{% if user.is_active %}
-redirect('post:post_list')
-{% endif %}
-<div class="content">메인 화면</div>
+
+    <div class="left">
+
+    </div>
+    <div class="content">
+        <div class="img">
+            <img class="img" src="{% static 'image/001.jpg' %}" alt="">
+
+        </div>
+        <div class="hello">
+            <div class="description">
+                <h3 style="text-align:center;">
+                    편스타그램
+                </h3>
+                환영합니다!
+                편한이의 첫 생일을 기념해서 만든 사이트입니다.
+                간단한 가입을 통해 우리 편한이의 사진들을 볼 수 있습니다.
+            </div>
+            <div class="profile">
+                <br>
+                이름: 편한이
+                <br>
+                생일: 2017.09.16
+                <br>
+                취미:
+                <br>
+                좋아하는 것:
+                <br>
+                <br>
+            </div>
+            <div class="post">
+                <a class="button" href="{%url 'post:index'%}">구경하기!</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="right">
+    </div>
+
+
+
 {% endblock content %}
 
 {% block footer %}
-<div class="footer">푸터</div>
+
 {% endblock footer %}
