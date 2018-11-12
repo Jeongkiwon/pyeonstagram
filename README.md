@@ -4,7 +4,7 @@
 
 배포는 파이썬애니웨어에서 했으며 아래의 주소로 가시면 사이트를 볼 수 있습니다.
 <br>
-<a href="pyeonstagram214132.pythonanywhere.com">pyeonstagram214132.pythonanywhere.com</a>
+<a href="pyeonstagram214132.pythonanywhere.com">pyeonstagram214132.pythonanywhere.com</a>(호스팅기간 만료)
 <h4>개인적으로 사용하는 사이트입니다. 글을 업로드하지 말아주세요!</h4>
 
 아직 post 하나에 사진 하나 밖에 넣지 못합니다. 
